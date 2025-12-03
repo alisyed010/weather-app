@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEATHER FORECAST - Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.8s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'spin-slow': 'spin 12s linear infinite',
+              'rain': 'rain 1s linear infinite',
+              'snow': 'snow 5s linear infinite',
+              'cloud-move': 'cloudMove 20s linear infinite',
+              'flash': 'flash 6s infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(30px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              rain: {
+                '0%': { transform: 'translateY(-10vh)' },
+                '100%': { transform: 'translateY(110vh)' },
+              },
+              snow: {
+                '0%': { transform: 'translateY(-10vh) translateX(0)', opacity: '0.8' },
+                '50%': { transform: 'translateY(50vh) translateX(20px)', opacity: '1' },
+                '100%': { transform: 'translateY(110vh) translateX(-20px)', opacity: '0.8' },
+              },
+              cloudMove: {
+                '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                '10%': { opacity: '1' },
+                '90%': { opacity: '1' },
+                '100%': { transform: 'translateX(100vw)', opacity: '0' },
+              },
+              flash: {
+                '0%, 92%, 100%': { opacity: '0' },
+                '93%': { opacity: '0.6' },
+                '94%': { opacity: '0.2' },
+                '96%': { opacity: '1' },
+                '97%': { opacity: '0' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-950 text-white overflow-x-hidden antialiased selection:bg-blue-500 selection:text-white">
+    <div id="root"></div>
+  </body>
+</html>
